@@ -39,3 +39,21 @@
   bottom: 30px;
   z-index: 20;
 }
+.modal-heading-custom-color{
+  color: #008A45;
+  background-color: #EFFFF4;
+  height: 100%;
+  width: 100%;
+}
+.login-custom-text-sizing{
+  font-size: 11px;
+  color: #495057  ;
+}
+.facebook-icon-sizing{
+  width: 18px;
+}
+.password-show-button{
+  position: absolute;
+  right: 15px;
+  top: 6px;
+}

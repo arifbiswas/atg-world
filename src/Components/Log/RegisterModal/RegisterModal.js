@@ -2,7 +2,7 @@ import React from "react";
 
 import Modal from "react-bootstrap/Modal";
 import loginImage from "../../../Assets/loginImage.png";
-const LoginModal = (props) => {
+const RegisterModal = (props) => {
   return (
     <Modal
       {...props}
@@ -26,8 +26,8 @@ const LoginModal = (props) => {
           <h4 className="fw-bolder">Create Account</h4>
           <small>
             <p className="">
-              Already have an account?{" "}
-              <span className="text-primary">Sign In</span>
+            Don’t have an account yet? {" "}
+              <button className="btn btn-link">Create new for free!</button>
             </p>
           </small>
         </div>
@@ -143,4 +143,4 @@ const LoginModal = (props) => {
   );
 };
 
-export default LoginModal;
+export default RegisterModal;
