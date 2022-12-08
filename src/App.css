@@ -2,3 +2,7 @@
   left: 15px;
   top: 6px;
 }
+.border-none{
+  border: none!important;
+  border-radius: 0 !important;
+}
