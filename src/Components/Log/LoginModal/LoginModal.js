@@ -132,17 +132,10 @@ const LoginModal = (props) => {
             <div className="d-flex justify-content-center">
               <img src={loginImage} alt="" />
             </div>
-            <p className="login-custom-text-sizing">
-              By signing up, you agree to our Terms & conditions, Privacy policy
-            </p>
           </div>
         </div>
       </Modal.Body>
     </Modal>
-     {/* <RegisterModal
-     show={registerModal}
-     onHide={() => setRegisterModal(false)}
-    ></RegisterModal> */}
   </div>
   );
 };
