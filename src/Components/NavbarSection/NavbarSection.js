@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
-function NavbarSection({setModalShow}) {
+function NavbarSection({setLoginModal}) {
   return (
     <Navbar bg="white" expand="lg" className="py-3 d-none d-md-none d-lg-block">
       <Container fluid>
@@ -148,7 +148,7 @@ function NavbarSection({setModalShow}) {
             aria-label="Search"
           />
         </Form>
-        <Button onClick={()=>setModalShow(true)} variant="light" className="fw-semibold">
+        <Button onClick={()=>setLoginModal(true)} variant="light" className="fw-semibold">
           Create account. <span className="text-primary">It’s free!</span>
           <span>
             <svg

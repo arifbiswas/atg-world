@@ -3,6 +3,8 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import loginImage from "../../../Assets/loginImage.png";
 const RegisterModal = (props) => {
+  const {setLoginModal ,setRegisterModal}=props;
+ 
   return (
     <Modal
       {...props}
@@ -25,9 +27,14 @@ const RegisterModal = (props) => {
         <div className="d-flex justify-content-between flex-column flex-lg-row">
           <h4 className="fw-bolder">Create Account</h4>
           <small>
-            <p className="">
-            Don’t have an account yet? {" "}
-              <button className="btn btn-link">Create new for free!</button>
+          <p className="">
+              Already have an account?{" "}
+              <button
+              onClick={()=>{
+                setLoginModal(true)
+                setRegisterModal(false)
+              }}
+              className="btn btn-link btn-sm">Sign In</button>
             </p>
           </small>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card, CardImg } from "react-bootstrap";
 
-const BannerSection = ({setModalShow}) => {
+const BannerSection = ({setLoginModal}) => {
   return (
     <div>
       <Card className="bg-dark text-white img-opacity border-none">
@@ -35,7 +35,7 @@ const BannerSection = ({setModalShow}) => {
               </svg>
             </Card.Text>
             <Card.Text>
-              <Button onClick={()=>setModalShow(true)} variant="outline-light">Join Group</Button>
+              <Button onClick={()=>setLoginModal(true)} variant="outline-light">Join Group</Button>
             </Card.Text>
           </div>
           <div className="d-flex flex-column justify-content-end h-75 ms-lg-5">

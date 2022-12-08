@@ -10,9 +10,11 @@ import Recommended from './Components/Recommended/Recommended';
 import PostIconOnPhone from './Components/PostIconOnPone/PostIconOnPhone';
 import LoginModal from './Components/Log/LoginModal/LoginModal';
 import { useState } from 'react';
+import RegisterModal from './Components/Log/RegisterModal/RegisterModal';
 
 function App() {
-  const [modalShow, setModalShow] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
+  const [registerModal, setRegisterModal] = useState(false);
   return (
     
     <Container >
@@ -23,12 +25,12 @@ function App() {
       </Row>
       <Row>
         <Col>
-        <NavbarSection setModalShow={setModalShow}></NavbarSection>
+        <NavbarSection setLoginModal={setLoginModal}></NavbarSection>
         </Col>
       </Row>
       <Row>
         <Col>
-        <BannerSection setModalShow={setModalShow}></BannerSection>
+        <BannerSection setLoginModal={setLoginModal}></BannerSection>
         </Col>
       </Row>
       <Row >
@@ -54,12 +56,24 @@ function App() {
         Launch vertically centered modal
       </Button> */}
 
-     <LoginModal
-      show={modalShow}
-      onHide={() => setModalShow(false)}
+    <LoginModal
+      show={loginModal}
+      onHide={() => setLoginModal(false)}
+      setLoginModal={setLoginModal}
+      setRegisterModal={setRegisterModal}
+      registerModal={registerModal}
      >
 
      </LoginModal>
+     
+     
+     <RegisterModal
+      show={registerModal}
+      onHide={() => setRegisterModal(false)}
+      setLoginModal={setLoginModal}
+      loginModal={loginModal}
+      setRegisterModal={setRegisterModal}
+     ></RegisterModal>
    
     </div>
     </Container>

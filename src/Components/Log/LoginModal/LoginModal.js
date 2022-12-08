@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Modal from "react-bootstrap/Modal";
 import loginImage from "../../../Assets/loginImage.png";
+import RegisterModal from "../RegisterModal/RegisterModal";
 const LoginModal = (props) => {
+  const {setLoginModal ,setRegisterModal,registerModal}=props;
+  if(registerModal){
+    setLoginModal(false)
+  }
   return (
-    <Modal
+  <div>
+      <Modal
       {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
@@ -23,11 +29,15 @@ const LoginModal = (props) => {
       </Modal.Header>
       <Modal.Body className="mx-3">
         <div className="d-flex justify-content-between flex-column flex-lg-row">
-          <h4 className="fw-bolder">Create Account</h4>
+          <h4 className="fw-bolder">Sign In</h4>
           <small>
-            <p className="">
-              Already have an account?{" "}
-              <span className="text-primary">Sign In</span>
+          <p className="">
+            Don’t have an account yet? {" "}
+              <button
+              onClick={()=>{
+                setRegisterModal(true)
+              }}
+              className="btn btn-link btn-sm">Create new for free!</button>
             </p>
           </small>
         </div>
@@ -37,16 +47,6 @@ const LoginModal = (props) => {
               <form>
                 <div>
                   <div class="input-group ">
-                    <input
-                      type="text"
-                      class="form-control py-2"
-                      placeholder="First Name"
-                    />
-                    <input
-                      type="text"
-                      class="form-control py-2"
-                      placeholder="Last Name"
-                    />
                   </div>
                   <div>
                     <input
@@ -65,16 +65,12 @@ const LoginModal = (props) => {
                       placeholder="Password"
                     />
                    </div>
-                    <input
-                      type="password"
-                      class="form-control py-2 w-100"
-                      placeholder="Confirm Password"
-                    />
+                  
                   </div>
                 </div>
                 <div className="mt-4 ">
-                  <button className="btn btn-primary rounded-pill w-100">
-                    Create Account
+                  <button  className="btn btn-primary rounded-pill w-100">
+                  Sign In
                   </button>
                   <div className="mt-3">
                     <button className="btn btn-white border mb-1  rounded w-100">
@@ -126,6 +122,9 @@ const LoginModal = (props) => {
                     </button>
                   </div>
                 </div>
+                <div className="text-center mt-4">
+                  <p className="forgot-font-sizing bolder">Forgot Password?</p>
+                </div>
               </form>
             </div>
           </div>
@@ -140,6 +139,11 @@ const LoginModal = (props) => {
         </div>
       </Modal.Body>
     </Modal>
+     {/* <RegisterModal
+     show={registerModal}
+     onHide={() => setRegisterModal(false)}
+    ></RegisterModal> */}
+  </div>
   );
 };
 
