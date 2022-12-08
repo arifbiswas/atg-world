@@ -6,3 +6,36 @@
   border: none!important;
   border-radius: 0 !important;
 }
+.img-sizing{
+  height: 50vh;
+}
+.rounded-full{
+  border-radius: 50%;
+}
+.position-leftSite{
+  position: absolute;
+  left: 25px;
+  top: 4px;
+}
+.position-rightSite{
+  position: absolute;
+  right: 25px;
+  top: 4px;
+}
+.your-location-text-color{
+  color: #495057  ;
+}
+.meetUp-button-color{
+  color: #E56135  ;
+  border: 1px solid #ADB5BD;
+}
+.job-button-color{
+  color: #02B875  ;
+  border: 1px solid #ADB5BD;
+}
+.postIconOnPhone{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 20;
+}
