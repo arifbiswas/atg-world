@@ -1,13 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import Modal from "react-bootstrap/Modal";
 import loginImage from "../../../Assets/loginImage.png";
-import RegisterModal from "../RegisterModal/RegisterModal";
+import { AuthProvider } from "../../../ContextApi/AuthContext";
 const LoginModal = (props) => {
   const {setLoginModal ,setRegisterModal,registerModal}=props;
   if(registerModal){
     setLoginModal(false)
   }
+  const [loginUser,setLoginUser] = useState({})
+  const { user,
+    loading,
+    createUser,
+    login,
+    loginWithGoogle,
+    updateUser,
+    logOut,
+    setLoading} =useContext(AuthProvider);
+
+    const handleLogin = (e) => {
+      e.preventDefault();
+    
+      console.log(loginUser);
+    };
+
+
   return (
   <div>
       <Modal
@@ -46,22 +63,24 @@ const LoginModal = (props) => {
             <div className="w-100 mt-3">
               <form>
                 <div>
-                  <div class="input-group ">
+                  <div className="input-group ">
                   </div>
                   <div>
                     <input
+                    onBlur={(e)=> setLoginUser({...loginUser,email : e.target.value})}
                       type="email"
-                      class="form-control py-2 w-100"
+                      className="form-control py-2 w-100"
                       placeholder="Email"
                     />
                    <div className="position-relative">
                    <label className="password-show-button"><svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0.75 9C2.0475 5.7075 5.25 3.375 9 3.375C12.75 3.375 15.9525 5.7075 17.25 9C15.9525 12.2925 12.75 14.625 9 14.625C5.25 14.625 2.0475 12.2925 0.75 9ZM15.615 9C14.3775 6.4725 11.8425 4.875 9 4.875C6.1575 4.875 3.6225 6.4725 2.385 9C3.6225 11.5275 6.1575 13.125 9 13.125C11.8425 13.125 14.3775 11.5275 15.615 9ZM9 7.125C10.035 7.125 10.875 7.965 10.875 9C10.875 10.035 10.035 10.875 9 10.875C7.965 10.875 7.125 10.035 7.125 9C7.125 7.965 7.965 7.125 9 7.125ZM5.625 9C5.625 7.14 7.14 5.625 9 5.625C10.86 5.625 12.375 7.14 12.375 9C12.375 10.86 10.86 12.375 9 12.375C7.14 12.375 5.625 10.86 5.625 9Z" fill="#8A8A8A"/>
+<path fillRule="evenodd" clipRule="evenodd" d="M0.75 9C2.0475 5.7075 5.25 3.375 9 3.375C12.75 3.375 15.9525 5.7075 17.25 9C15.9525 12.2925 12.75 14.625 9 14.625C5.25 14.625 2.0475 12.2925 0.75 9ZM15.615 9C14.3775 6.4725 11.8425 4.875 9 4.875C6.1575 4.875 3.6225 6.4725 2.385 9C3.6225 11.5275 6.1575 13.125 9 13.125C11.8425 13.125 14.3775 11.5275 15.615 9ZM9 7.125C10.035 7.125 10.875 7.965 10.875 9C10.875 10.035 10.035 10.875 9 10.875C7.965 10.875 7.125 10.035 7.125 9C7.125 7.965 7.965 7.125 9 7.125ZM5.625 9C5.625 7.14 7.14 5.625 9 5.625C10.86 5.625 12.375 7.14 12.375 9C12.375 10.86 10.86 12.375 9 12.375C7.14 12.375 5.625 10.86 5.625 9Z" fill="#8A8A8A"/>
 </svg>
 </label>
                     <input
+                     onBlur={(e)=> setLoginUser({...loginUser,password : e.target.value})}
                       type="password"
-                      class="form-control py-2 w-100"
+                      className="form-control py-2 w-100"
                       placeholder="Password"
                     />
                    </div>
@@ -69,7 +88,9 @@ const LoginModal = (props) => {
                   </div>
                 </div>
                 <div className="mt-4 ">
-                  <button  className="btn btn-primary rounded-pill w-100">
+                  <button
+                  onClick={handleLogin}
+                  className="btn btn-primary rounded-pill w-100">
                   Sign In
                   </button>
                   <div className="mt-3">
@@ -93,7 +114,7 @@ const LoginModal = (props) => {
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
                         >
-                          <g clip-path="url(#clip0_1_2217)">
+                          <g clipPath="url(#clip0_1_2217)">
                             <path
                               d="M3.54594 9.66905L2.989 11.7482L0.953406 11.7912C0.345063 10.6629 0 9.37192 0 8.00005C0 6.67345 0.322625 5.42245 0.8945 4.32092H0.894938L2.70719 4.65317L3.50106 6.45455C3.33491 6.93895 3.24434 7.45895 3.24434 8.00005C3.24441 8.5873 3.35078 9.14995 3.54594 9.66905Z"
                               fill="#FBBB00"

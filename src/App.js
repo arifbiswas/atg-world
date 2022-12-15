@@ -40,7 +40,7 @@ function App() {
         <Col>
         <PostBar></PostBar>
         </Col>
-        <hr class="mt-2 d-none d-md-none d-lg-block"/>
+        <hr className="mt-2 d-none d-md-none d-lg-block"/>
       </Row>
       <Row >
         <Col className='col-lg-8'>
